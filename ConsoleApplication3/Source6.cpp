@@ -1,34 +1,5 @@
-#include<iostream>
-class dynarr
-{
-	int* arr;
-	int size;
-public:
-	dynarr() : size{ 0 }, arr{ nullptr }{};
-	dynarr(int size_p):size{size_p}, arr{new int[size_p]}
-	{
-		//std::cout << "cr" << *this << std::endl;
-	}
-	~dynarr()
-	{
-		std::cout << "delete " << this<< std::endl;
-		delete[]arr;
-		arr = nullptr;
-		size = 0;
-	}
-	dynarr(const dynarr& sourse)
-	{
-		size = sourse.size;
-		arr = new int[size];
+/*#include"Dyn.h"
 
-	}
-	int& operator[](int index)
-	{
-		return arr[index];
-	}
-	friend std::ostream& operator<< (std::ostream& outjuj, dynarr& jujy);
-	
-};
 std::ostream& operator<< (std::ostream& outjuj, dynarr& jujy)
 {
 	outjuj << jujy.arr << " ";
@@ -38,7 +9,7 @@ std::ostream& operator<< (std::ostream& outjuj, dynarr& jujy)
 	}
 	return outjuj;
 }
-dynarr& mkarr(int razm)
+dynarr mkarr(int razm)
 {
 	dynarr arr(razm);
 	std::cout << "cr in fk " << arr << std::endl;
@@ -54,4 +25,4 @@ int main()
 	dynarr arr = mkarr(7);
 	return 0;
 
-}
+}*/

@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 template<class T>
 class point
 {
@@ -24,4 +24,4 @@ int main()
 	point<char> p1(2.5); //ТО жесамое что сверху почти
 	std::cout << p1;
 	return 0;
-}
+}*/

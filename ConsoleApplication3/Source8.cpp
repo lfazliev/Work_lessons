@@ -1,10 +1,9 @@
 #include <iostream>
-#include <vector>
 template<class T>
 class point
 {
-public:
 	T x, y, z;
+public:
 	point() :x{ 1 }, y{ 1 }, z{ 1 }{}
 	point(T num) :x{num},y{num}, z{num}{}
 	void printinfo()
@@ -22,9 +21,7 @@ std::ostream& operator<<(std::ostream& output,point<T>& param)
 }
 int main()
 {
-//	std::vector<int> vect;
 	point<char> p1(2.5); //ТО жесамое что сверху почти
 	std::cout << p1;
 	return 0;
-
 }

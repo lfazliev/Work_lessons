@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 class elem
 {
 	int num;
@@ -88,3 +88,4 @@ int main()
 	list1.addel(19654);
 	list1[0].print();
 }
+*/

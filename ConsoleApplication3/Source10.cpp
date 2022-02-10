@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 class worker
 {
@@ -215,4 +215,4 @@ int main()
 			break;
 		}
 	} while (choose != 0);
-}
+}*/

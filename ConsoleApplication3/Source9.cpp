@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 template <typename T>
 void print(T num1)
 {
@@ -13,4 +13,4 @@ void print(T num1,Args ...args)
 int main()
 {
 	print(1, 21, -3246);
-}
+}*/

@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 class Elem
 {
 	Elem* prev;
@@ -37,6 +37,7 @@ public:
 		if (begin == nullptr)
 		{
 			end = begin = tmp;
+			std::cout << tmp << " binded to " << end << std::endl;
 		}
 		else
 		{
@@ -68,4 +69,4 @@ int main()
 	}
 
 
-}
+}*/

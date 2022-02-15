@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 using namespace std;
 class elem
@@ -84,4 +84,4 @@ int main()
 
 	} while (choose != 0);
 
-}
+}*/

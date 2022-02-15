@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 class Elem	
 {
 	int* data;
@@ -72,4 +72,4 @@ int main()
 		std::cout << listONE[i].getData() << " ";
 	}
 
-}
+}*/

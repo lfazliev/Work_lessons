@@ -1,5 +1,5 @@
-/*#include<iostream>
-#include<vector>
+#include<iostream>
+#include<stack>
 using namespace std;
 class elem
 {
@@ -11,7 +11,7 @@ public:
 		data = new int(num); //ÑÎÇÄÀ¨Ì ÍÎÂÛÉ ÝË ÐÀÇÌÅÐÍÎÑÒÜÞ 
 	}
 	elem* getLeft() { return left; } 
-	elem* getNext() { return right; } 
+	elem* getRight() { return right; } 
 	int& getData() { return *data; } 
 	void setLeft(elem* param) { left = param; } 
 	void setRight(elem* param) { right = param; } 
@@ -27,9 +27,10 @@ public:
 	}
 	void add(int f)
 	{
+		elem* tmp;
 		if (root == nullptr)
 		{
-			elem* tmp = new elem(f);
+			tmp = new elem(f);
 			root = tmp;
 		}
 		else
@@ -40,15 +41,34 @@ public:
 			}
 			else
 			{
-				if ((root->getData()) > f)
-				{
-					elem* tmp = new elem(f);
-					root-> setLeft(tmp);
-				}
-				if ((root->getData()) < f)
-				{
-					elem* tmp = new elem(f);
-					root->setRight(tmp);
+				tmp = root;
+				int choose = 1;
+				while(choose != 0)
+				{	
+					if ((tmp->getData()) > f)
+					{
+						if (tmp->getLeft() != nullptr)
+						{
+							tmp = tmp->getLeft();
+						}
+						else
+						{
+							tmp->setLeft(new elem(f));
+							choose = 0;
+						}
+					}
+					else
+					{
+						if (tmp->getRight() != nullptr)
+						{
+							tmp = tmp->getRight();
+						}
+						else
+						{
+							tmp->setRight(new elem(f));
+							choose = 0;
+						}
+					}
 				}
 			}
 		}
@@ -57,6 +77,7 @@ public:
 int main()
 {
 	int choose, col;
+	tree g;
 	system("chcp 1251");
 	do
 	{
@@ -71,6 +92,7 @@ int main()
 		{
 			cout << "\nÂâåäèòå ýëåìåíò ";
 			cin >> col;
+			g.add(col);
 
 		}break;
 		case 2:
@@ -84,4 +106,4 @@ int main()
 
 	} while (choose != 0);
 
-}*/
+}

@@ -1,4 +1,4 @@
-
+/*
 #include <iostream>
 template <class T>
 class Elem
@@ -69,4 +69,4 @@ int main()
 	{
 		std::cout << lifan[i].getData();
 	}
-}
+}*/

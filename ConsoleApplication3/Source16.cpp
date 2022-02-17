@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<stack>
 #include<string>
 int main()
@@ -7,6 +7,6 @@ int main()
 	std::stack <char> bj;
 	for (int i = 0; i < str.size(); i++)
 	{
-		str.at(i) = bj;
+		bj.push(str.at(i));
 	}
-}
+}*/

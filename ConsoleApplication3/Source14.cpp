@@ -77,6 +77,7 @@ public:
 	{
 		elem* tmp = root;
 		stack <elem*> obj;
+		obj.push(nullptr);
 		int chase;
 		do
 		{
@@ -86,8 +87,8 @@ public:
 			{
 			case 1:
 			{
-				int lefo= false, prafo=false;
-				while (true)
+				int lefo= false, prafo=false, block = 1;
+				while (block !=0)
 				{
 					if (tmp != nullptr)//Если есть какой либо элемент
 					{
@@ -113,16 +114,22 @@ public:
 								}
 								else//если с обеих сторон ничего нет то
 								{
-
-									tmp = obj.top();//Возращаемся к объекту в стеке
-									obj.pop();//удаляем стек
-									tmp = tmp->getRight();
+									if (obj.top() != nullptr)
+									{
+										tmp = obj.top();//Возращаемся к объекту в стеке
+										obj.pop();//удаляем стек
+										tmp = tmp->getRight();
+									}
+									else
+									{
+										block = 0;
+										chase = 0;
+									}
 								}
 							}
 						}
 					}
 				}
-
 			}break;
 			case 2:
 			{
@@ -149,7 +156,6 @@ int main()
 	system("chcp 1251");
 	do
 	{
-
 		system("pause");
 		system("cls");
 		cout << "\n1.Добавить элемент\n2.Вывод\n3.Поиск\n4.Удаление\n5.Выйти\n";
@@ -158,22 +164,9 @@ int main()
 			{
 			case 1:
 			{
-				/*cout << "\nВведите элемент ";
+				cout << "\nВведите элемент ";
 				cin >> col;
-				g.add(col);*/
-				g.add(5);
-				g.add(-3);
-				g.add(6);
-				g.add(0);
-				g.add(8);
-				g.add(-5);
-				g.add(9);
-				g.add(7);
-				g.add(-6);
-				g.add(2);
-				g.add(-1);
-
-
+				g.add(col);
 			}break;
 			case 2:
 			{

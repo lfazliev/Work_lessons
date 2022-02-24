@@ -1,5 +1,6 @@
-#include<iostream>
+/*#include<iostream>
 #include<stack>
+#include<vector>
 using namespace std;
 class elem
 {
@@ -151,8 +152,9 @@ public:
 };
 int main()
 {
-	int choose, col;
+	int choose, col, colega;
 	tree g;
+	vector <int> deep;
 	system("chcp 1251");
 	do
 	{
@@ -164,13 +166,28 @@ int main()
 			{
 			case 1:
 			{
-				cout << "\n¬ведите элемент ";
-				cin >> col;
-				g.add(col);
+				
+				cout << "\n—колько элементов вы хотите добавить? ";
+				cin >> colega;
+				for (size_t i = 0; i < colega; i++)
+				{
+					cout << "\n¬ведите элемент ";
+					cin >> col;
+					deep.push_back(col);
+					g.add(col);
+				}
+				
 			}break;
 			case 2:
 			{
+				
+				
 				g.print();
+				cout << " ";
+				for (int i = 0; i < deep.size(); i++)
+				{
+					cout << " " << deep.at(i);
+				}
 			}break;
 			case 3:
 			{
@@ -197,4 +214,4 @@ int main()
 				break;
 			}
 	} while (choose != 0);
-}
+}*/

@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 #include<string>
 #include <ctime>
@@ -57,4 +57,4 @@ int main()
 	komnaty.print(komnaty.komnata.size());
 	komnaty.~billing();
 	return 0;
-}
+}*/

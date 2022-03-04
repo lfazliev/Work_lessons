@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 #include <ctime>
 class Dice
@@ -143,3 +143,4 @@ int main()
 	} while (choose !=0);
 }
 
+*/

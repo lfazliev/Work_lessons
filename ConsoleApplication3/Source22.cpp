@@ -22,19 +22,15 @@ public:
 			{
 				std::getline(text, text_sum);
 			}
-			std::cout << text_sum << "\n";
+			std::cout << text_sum << std::endl;
 		}
 	}
-	/*void open()
-	{
-		
-	}*/
 	void edit()
 	{
-		std::cout << "Введите новый текст\nВыход по нажатию alt f11\n";
-		/*std::cin.ignore();
-		std::getline(std::cin, text_sum);*/
-		do
+		std::cout << "Введите новый текст\n";
+		//std::cin.ignore();
+		std::getline(std::cin, text_sum);
+		/*do
 		{
 			system("cls");
 			std::cout << text_sum;
@@ -56,11 +52,11 @@ public:
 					text_sum.push_back(tot.at(i));
 				}
 			}
-		} while (_getch() != 75);
+		} while (_getch() != 75);*/
 	}
 	void save()
 	{
-		std::ofstream out("C:/Users/BV122/Desktop/giga.txt");
+		std::ofstream out("C:/Users/Ленар/Desktop/ПО/bv.txt");
 		if (out.is_open())
 		{
 			out << text_sum;
@@ -99,16 +95,19 @@ void ShowMenu(int iItem)
 	std::cout << "2 - Изменить\n";
 	if (iItem == 3) std::cout << "";
 	else std::cout << "	";
-	std::cout << "3 - Save\n";
+	std::cout << "3 - Сохранить\n";
 	if (iItem == 4) std::cout << "";
 	else std::cout << "	";
-	std::cout << "4 - kodirovat\n";
+	std::cout << "4 - Закодировать\n";
 	if (iItem == 5) std::cout << "";
 	else std::cout << "	";
-	std::cout << "5 - decodirovat\n";
+	std::cout << "5 - Декодировать\n";
 	if (iItem == 6) std::cout << "";
 	else std::cout << "	";
-	std::cout << "6 - print\n";
+	std::cout << "6 - Напечатать\n";
+	if (iItem == 7) std::cout << "";
+	else std::cout << "	";
+	std::cout << "7 - Уйти\n";
 
 }
 void primenenie(int& z, int& pozition, std::vector<text1>& flor)
@@ -116,9 +115,9 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 	int choose;
 	do
 	{
+		system("cls");
 		ShowMenu(z);
 		choose = _getch();
-		system("cls");
 		switch (choose)
 		{
 		case 72:
@@ -130,20 +129,22 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 		}break;
 		case 80:
 		{
-			if (z != 6)
+			if (z != 7)
 			{
 				z++;
 			}
 		}break;
 		case 13:
 		{
+			system("cls");
 			switch (z)
 			{
 			case 1:
 			{
-				std::string kil = "C:/Users/BV122/Desktop/giga.txt";
+				std::string kil = "C:/Users/Ленар/Desktop/ПО/bv.txt";
 				flor.push_back(kil);
 				pozition = 1;
+				system("pause");
 			}break;
 			case 2:
 			{
@@ -151,6 +152,7 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 				{
 					flor.at(0).edit();
 				}
+				system("pause");
 			}break;
 			case 3:
 			{
@@ -158,6 +160,7 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 				{
 					flor.at(0).save();
 				}
+				system("pause");
 			}break;
 			case 4:
 			{
@@ -165,6 +168,7 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 				{
 					flor.at(0).zacodirovat();
 				}
+				system("pause");
 			}break;
 			case 5:
 			{
@@ -172,6 +176,7 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 				{
 					flor.at(0).decodirovat();
 				}
+				system("pause");
 			}break;
 			case 6:
 			{
@@ -179,11 +184,16 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 				{
 					flor.at(0).print();
 				}
+				system("pause");
+			}break;
+			case 7:
+			{
+				z = 0;
 			}break;
 			default:
 				break;
 			}
-		}
+		}break;
 		default:
 		{
 			break;
@@ -196,10 +206,8 @@ int main()
 	system("chcp 1251");
 	int pozition = 0, z = 1;
 	std::vector<text1>flor;
-	while (true)
-	{
-		primenenie(z, pozition, flor);
-	}
+	primenenie(z, pozition, flor);
+	
 	
 	
 	

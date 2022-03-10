@@ -6,7 +6,7 @@
 class text1
 {
 	std::ifstream text;
-	std::string text_sum, tot;
+	std::string text_sum, slo;
 public:
 	text1(std::string choosa)
 	{
@@ -20,7 +20,8 @@ public:
 			std::cout << "Great!\n";
 			while (!text.eof())
 			{
-				std::getline(text, text_sum);
+				std::getline(text, slo);
+				text_sum = text_sum + "\n" + slo;
 			}
 			std::cout << text_sum << "\n";
 		}
@@ -29,34 +30,23 @@ public:
 	{
 		
 	}*/
+
 	void edit()
 	{
-		std::cout << "Введите новый текст\nВыход по нажатию alt f11\n";
-		/*std::cin.ignore();
-		std::getline(std::cin, text_sum);*/
+		std::cout << "Введите новый текст\nВыход по нажатию backspace\n";
+		int num = 0;
+		
+		text_sum.clear();
 		do
 		{
-			system("cls");
-			std::cout << text_sum;
-			if (_getch() == 13)
+			if (num == 13)
 			{
-				text_sum.push_back('\n');
-				std::cout << "\n";
-				std::cin >> tot;
-				for (int i = 0; i < tot.size(); i++)
-				{
-					text_sum.push_back(tot.at(i));
-				}
+				//std::cout << "\n";
+				slo = slo + '\n';
 			}
-			else
-			{
-				std::cin >> tot;
-				for (int i = 0; i < tot.size(); i++)
-				{
-					text_sum.push_back(tot.at(i));
-				}
-			}
-		} while (_getch() != 75);
+			std::getline(std::cin, slo);
+			text_sum = text_sum + slo;
+		} while ((num =_getch()) != 27);
 	}
 	void save()
 	{
@@ -67,21 +57,31 @@ public:
 		}
 		out.close();
 	}
-	void zacodirovat()
+	void zacodirovat(int &pol)
 	{
-		for (int i = 0; i < text_sum.size(); i++)
+		if (pol >= 0)
 		{
-			text_sum.at(i) = (int)text_sum.at(i) + 3;
+			for (int i = 0; i < text_sum.size(); i++)
+			{
+				text_sum.at(i) = (int)text_sum.at(i) + 3;
+			}
+			std::cout << text_sum << "\n";
+			pol--;
 		}
-		std::cout << text_sum << "\n";
+		else
+		{
+			std::cout << "Уже закодировано\n";
+		}
+		
 	}
-	void decodirovat()
+	void decodirovat(int &pol)
 	{
 		for (int i = 0; i < text_sum.size(); i++)
 		{
 			text_sum.at(i) = (int)text_sum.at(i) - 3;
 		}
 		std::cout << text_sum << "\n";
+		pol++;
 	}
 	void print()
 	{
@@ -111,7 +111,7 @@ void ShowMenu(int iItem)
 	std::cout << "6 - print\n";
 
 }
-void primenenie(int& z, int& pozition, std::vector<text1>& flor)
+void primenenie(int& z, int& pozition, std::vector<text1>& flor, int &pol)
 {
 	int choose;
 	do
@@ -163,14 +163,14 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 			{
 				if (pozition == 1)
 				{
-					flor.at(0).zacodirovat();
+					flor.at(0).zacodirovat(pol);
 				}
 			}break;
 			case 5:
 			{
 				if (pozition == 1)
 				{
-					flor.at(0).decodirovat();
+					flor.at(0).decodirovat(pol);
 				}
 			}break;
 			case 6:
@@ -194,11 +194,11 @@ void primenenie(int& z, int& pozition, std::vector<text1>& flor)
 int main()
 {
 	system("chcp 1251");
-	int pozition = 0, z = 1;
+	int pozition = 0, z = 1, pol = 0;
 	std::vector<text1>flor;
 	while (true)
 	{
-		primenenie(z, pozition, flor);
+		primenenie(z, pozition, flor, pol);
 	}
 	
 	

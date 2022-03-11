@@ -26,10 +26,6 @@ public:
 			std::cout << text_sum << "\n";
 		}
 	}
-	/*void open()
-	{
-		
-	}*/
 
 	void edit()
 	{

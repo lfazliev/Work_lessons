@@ -159,6 +159,7 @@
     <ClCompile Include="Source21.cpp" />
     <ClCompile Include="Source22.cpp" />
     <ClCompile Include="Source23.cpp" />
+    <ClCompile Include="Source24.cpp" />
     <ClCompile Include="Source3.cpp" />
     <ClCompile Include="Source4.cpp" />
     <ClCompile Include="Source5.cpp" />

@@ -99,6 +99,9 @@
     <ClCompile Include="Source24.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="\\desktop-bd7sifl\Share\С++\ООП\Материал\Menu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dyn.h">

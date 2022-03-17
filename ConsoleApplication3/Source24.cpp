@@ -1,8 +1,8 @@
-#include <iostream>
+﻿/*#include <iostream>
 #include <vector>
 #include <fstream>
-#include <string>
-void openf(std::string &file_sum, std::string &buf)
+#include <string>//НЕДОДЕЛАНО
+void openf(std::string& file_sum, std::string& buf)
 {
 	std::ifstream file;
 	file.open("C:/Users/BV122/source/repos/ConsoleApplication2/ConsoleApplication2/file");
@@ -21,33 +21,23 @@ void openf(std::string &file_sum, std::string &buf)
 		std::cout << file_sum << "\n";
 	}
 }
-void razivl(std::string find, std::string &blidz)
-{
-	for (int i = 0; i < find.size(); i++)
-	{
-		blidz.push_back(find.at(i));
-	}
-}
-void finda(std::string find, std::string file_sum, std::vector<std::string> blidz)
-{
-	for (int i = 0; i < file_sum.size(); i++)
-	{
 
-		if (file_sum.at(i) == blidz.at(i))
-		{
-			
-		}
+class coord
+{
+	std::string name; std::string& file_sum, buf;
+	double W, E, N, S, zn;
+public:
+	void zapolnit()
+	{
+	//	openf
 	}
-	
-	
-}
+};
+
 int main()
 {
 	std::string file_sum, buf;
 	std::ifstream file;
-	openf(file_sum, buf);
+	//openf(file_sum, buf);
 	std::string find;
 	std::vector<std::string> blidz;
-	find = "Fo0kCR";
-	
-}
+}*/

@@ -1,7 +1,8 @@
-﻿/*#include <iostream>
+﻿//НЕДОДЕЛАНО
+/*#include <iostream>
 #include <vector>
 #include <fstream>
-#include <string>//НЕДОДЕЛАНО
+#include <string>
 void openf(std::string& file_sum, std::string& buf)
 {
 	std::ifstream file;
